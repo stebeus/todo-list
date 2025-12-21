@@ -1,4 +1,4 @@
-# To-do List
+# Todo List
 
 The perfect task management app for easy and productive organization.
 

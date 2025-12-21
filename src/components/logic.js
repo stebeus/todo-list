@@ -9,7 +9,7 @@ function createTask(name, desc, priority, dueDate) {
     desc,
     priority,
     get dueDate() {
-      return dueDate;
+      return convertDateToObj(dueDate);
     },
     get isComplete() {
       return isComplete;

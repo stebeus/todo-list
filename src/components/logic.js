@@ -32,4 +32,20 @@ function createProject(name) {
   return { id, name, add, remove };
 }
 
-export { createTask, createProject };
+const projectManager = {
+  list: [],
+  add: function (project) {
+    return this.list.push(project);
+  },
+  find: function (projectId) {
+    return this.list.find((project) => project.id === projectId);
+  },
+  switch: function (projectId) {
+    return this.list[find(projectId)];
+  },
+  remove: function (projectId) {
+    return this.list.splice(find(projectId), 1);
+  },
+};
+
+export { createTask, createProject, projectManager };

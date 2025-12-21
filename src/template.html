@@ -76,6 +76,16 @@
           <button type="button" data-action="close">Close</button>
         </form>
       </dialog>
+      <template id="task-item-template">
+        <li class="task-item">
+          <h4></h4>
+          <p id="desc"></p>
+          <p id="due-date">Due date:</p>
+          <button type="button" data-action="switch-priority"></button>
+          <button type="button" data-action="switch-status"></button>
+          <button type="button" data-action="remove-task">Remove</button>
+        </li>
+      </template>
     </div>
   </body>
 </html>

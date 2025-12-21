@@ -21,4 +21,15 @@ function createTask(name, desc, priority, dueDate) {
   };
 }
 
-export { createTask };
+function createProject(name) {
+  const id = generateID();
+  const list = [];
+
+  const add = (task) => list.push(task);
+  const find = (taskId) => list.find((task) => task.id === taskId);
+  const remove = (taskId) => list.splice(find(taskId), 1);
+
+  return { id, name, add, remove };
+}
+
+export { createTask, createProject };

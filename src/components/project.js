@@ -1,4 +1,5 @@
 import { createTask, createProject, projectManager } from "./logic";
+import { renderTask } from "./task";
 
 const taskList = document.querySelector(".task-list");
 

@@ -3,4 +3,9 @@ const form = document.querySelector("form");
 
 const clearForm = () => form.reset();
 
-export { modal };
+function close() {
+  modal.close();
+  clearForm();
+}
+
+export { modal, close };

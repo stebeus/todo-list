@@ -1,5 +1,7 @@
 import { createProject, projectManager } from "./logic";
 
+const projectList = document.querySelector(".project-list");
+
 const submitProject = (name) => projectManager.add(createProject(name));
 
 function initHome() {

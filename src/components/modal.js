@@ -1,5 +1,5 @@
 import { submitTask, updateTaskList } from "./project";
-import { submitProject } from "./sidebar";
+import { submitProject, updateProjectList } from "./sidebar";
 
 const taskModal = document.querySelector("#task-modal");
 const projectModal = document.querySelector("#project-modal");
@@ -41,8 +41,9 @@ function handleTaskForm() {
 }
 
 function handleProjectForm() {
-  const formData = new FormData(projectForm).values;
-  submitProject(formData);
+  const name = document.querySelector("#project-name").value;
+  submitProject(name);
+  updateProjectList();
   clearForm();
 }
 

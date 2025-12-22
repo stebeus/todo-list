@@ -1,11 +1,11 @@
 import { createTask } from "./logic";
-import { modal } from "./modal";
+import { taskModal } from "./modal";
 import { currProject } from "./sidebar";
 import { renderTaskItem } from "./task";
 
 const taskList = document.querySelector(".task-list");
 
-const addTask = () => modal.showModal();
+const addTask = () => taskModal.showModal();
 const submitTask = (...values) => currProject.add(createTask(...values));
 
 const clearTaskList = () => (taskList.innerHTML = "");

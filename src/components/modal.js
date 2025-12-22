@@ -22,6 +22,8 @@ function handleModal(e) {
   }
 }
 
+const handleSubmit = (...values) => submitTask(...values);
+
 modal.addEventListener("click", handleModal);
 
 export { modal, close };

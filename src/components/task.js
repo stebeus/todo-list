@@ -1,3 +1,4 @@
+import { capitalize, formatDate, formatStatus } from "../utils/formatters";
 import { taskList } from "./project";
 
 function renderTaskItem(task) {

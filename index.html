@@ -5,5 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
   <script defer src="main.js"></script></head>
-  <body></body>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Todo list</h1>
+      </header>
+      <main>
+        <button type="button" data-action="add-task">Add task</button>
+        <ul class="task-list"></ul>
+      </main>
+      <aside class="sidebar">
+        <h2>Projects</h2>
+        <button type="button" data-action="add-project">Create project</button>
+        <nav>
+          <ul class="project-list">
+            <li class="project-item">
+              <h3><a href="/">Home</a></h3>
+              <button type="button" data-action="remove-project">Remove</button>
+            </li>
+          </ul>
+        </nav>
+        <footer>
+          <p>
+            © 2025 Stebeus.
+            <a
+              href="https://opensource.org/license/mit"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MIT License.</a
+            >
+          </p>
+          <a
+            href="https://github.com/stebeus"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </footer>
+      </aside>
+      <dialog class="modal">
+        <form method="dialog">
+          <div>
+            <label for="name">Task name:</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div>
+            <label for="desc">Description:</label>
+            <textarea name="desc" id="desc" rows="3" required></textarea>
+          </div>
+          <div>
+            <label for="priority">Priority:</label>
+            <select name="priority" id="priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div>
+            <label for="due-date">Due date:</label>
+            <input type="date" name="due-date" id="due-date" required />
+          </div>
+          <button type="submit">Submit</button>
+          <button type="button" data-action="close">Close</button>
+        </form>
+      </dialog>
+      <template id="task-item-template">
+        <li class="task-item" data-id="">
+          <h4></h4>
+          <p id="desc"></p>
+          <p id="due-date"></p>
+          <div class="actions">
+            <button
+              type="button"
+              id="priority"
+              data-action="switch-priority"
+            ></button>
+            <button
+              type="button"
+              id="status"
+              data-action="switch-status"
+            ></button>
+            <button type="button" data-action="remove-task">Remove</button>
+          </div>
+        </li>
+      </template>
+      <template id="project-item-template">
+        <li class="project-item" data-id="">
+          <h3><a href=""></a></h3>
+          <button type="button" data-action="remove-project">Remove</button>
+        </li>
+      </template>
+    </div>
+  </body>
 </html>

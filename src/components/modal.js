@@ -39,4 +39,4 @@ function handleForm() {
 modal.addEventListener("click", handleModal);
 form.addEventListener("submit", handleForm);
 
-export { modal, close };
+export { projectModal, taskModal, close };

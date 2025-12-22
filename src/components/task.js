@@ -15,6 +15,18 @@ function renderTaskItem(task) {
   taskList.appendChild(clone);
 }
 
+function switchPriority(e) {
+  const taskId = e.target.closest(".task-item").dataset.id;
+  const priority = e.target.closest("#priority");
+
+  currProject.list.find((task) => {
+    if (task.id === taskId) {
+      task.switchPriority();
+      priority.textContent = capitalize(task.priority);
+    }
+  });
+}
+
 function switchStatus(e) {
   const taskId = e.target.closest(".task-item").dataset.id;
   const status = e.target.closest("#status");
@@ -27,4 +39,4 @@ function switchStatus(e) {
   });
 }
 
-export { renderTaskItem, switchStatus };
+export { renderTaskItem, switchStatus, switchPriority };

@@ -1,5 +1,5 @@
 import { createTask, createProject, projectManager } from "./logic";
-import { renderTask } from "./task";
+import { renderTaskItem } from "./task";
 
 const taskList = document.querySelector(".task-list");
 
@@ -10,7 +10,7 @@ const clearTaskList = () => (taskList.innerHTML = "");
 
 function updateTaskList() {
   clearTaskList();
-  currProject.list.forEach(renderTask);
+  currProject.list.forEach(renderTaskItem);
 }
 
 export { taskList, currProject, submitTask, updateTaskList };

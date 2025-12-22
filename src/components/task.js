@@ -1,6 +1,6 @@
 import { taskList } from "./project";
 
-function renderTask(task) {
+function renderTaskItem(task) {
   const template = document.querySelector("#task-item-template");
   const clone = template.content.cloneNode(true);
 
@@ -14,4 +14,4 @@ function renderTask(task) {
   taskList.appendChild(clone);
 }
 
-export { renderTask };
+export { renderTaskItem };

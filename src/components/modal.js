@@ -2,7 +2,7 @@ import { submitTask, updateTaskList } from "./project";
 
 const modal = document.querySelector(".modal");
 const taskModal = document.querySelector("#task-modal");
-const projectModal = document.querySelector("project-modal");
+const projectModal = document.querySelector("#project-modal");
 
 const form = document.querySelector("form");
 

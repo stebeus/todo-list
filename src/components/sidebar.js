@@ -1,3 +1,5 @@
 import { createProject, projectManager } from "./logic";
 
-export {};
+const submitProject = (name) => projectManager.add(createProject(name));
+
+export { submitProject };

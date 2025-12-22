@@ -1,4 +1,4 @@
-import { addTask } from "./project";
+import { addTask, removeTask } from "./project";
 import { close } from "./modal";
 
 function handleBtns(e) {
@@ -9,11 +9,12 @@ function handleBtns(e) {
 
   const actionHandlers = {
     "add-task": addTask,
+    "remove-task": removeTask,
     close,
   };
 
   const actionHandler = actionHandlers[action];
-  if (actionHandler) return actionHandler();
+  if (actionHandler) return actionHandler(e);
 }
 
 export { handleBtns };

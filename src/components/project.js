@@ -16,4 +16,17 @@ function updateTaskList() {
   currProject.list.forEach(renderTaskItem);
 }
 
-export { taskList, currProject, addTask, submitTask, updateTaskList };
+function removeTask(e) {
+  const taskId = e.target.closest(".task-item").dataset.id;
+  currProject.remove(taskId);
+  updateTaskList();
+}
+
+export {
+  taskList,
+  currProject,
+  addTask,
+  submitTask,
+  updateTaskList,
+  removeTask,
+};

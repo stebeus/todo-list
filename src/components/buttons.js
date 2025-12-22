@@ -1,3 +1,4 @@
+import { addProject } from "./sidebar";
 import { addTask, removeTask } from "./project";
 import { switchPriority, switchStatus } from "./task";
 import { close } from "./modal";
@@ -9,6 +10,7 @@ function handleBtns(e) {
   const { action } = btn.dataset;
 
   const actionHandlers = {
+    "add-project": addProject,
     "add-task": addTask,
     "switch-priority": switchPriority,
     "switch-status": switchStatus,

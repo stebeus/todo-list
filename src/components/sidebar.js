@@ -3,6 +3,7 @@ import { projectModal } from "./modal";
 
 const projectList = document.querySelector(".project-list");
 
+const addProject = () => projectModal.showModal();
 const submitProject = (name) => projectManager.add(createProject(name));
 
 function initHome() {
@@ -13,4 +14,4 @@ function initHome() {
 
 let currProject = initHome();
 
-export { submitProject, currProject };
+export { addProject, submitProject, currProject };

@@ -1,4 +1,5 @@
 import { addTask, removeTask } from "./project";
+import { switchStatus } from "./task";
 import { close } from "./modal";
 
 function handleBtns(e) {
@@ -9,6 +10,7 @@ function handleBtns(e) {
 
   const actionHandlers = {
     "add-task": addTask,
+    "switch-status": switchStatus,
     "remove-task": removeTask,
     close,
   };

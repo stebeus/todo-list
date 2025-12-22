@@ -1,5 +1,5 @@
 import { capitalize, formatDate, formatStatus } from "../utils/formatters";
-import { taskList } from "./project";
+import { taskList, currProject } from "./project";
 
 function renderTaskItem(task) {
   const template = document.querySelector("#task-item-template");
@@ -15,4 +15,16 @@ function renderTaskItem(task) {
   taskList.appendChild(clone);
 }
 
-export { renderTaskItem };
+function switchStatus(e) {
+  const taskId = e.target.closest(".task-item").dataset.id;
+  const status = e.target.closest("#status");
+
+  currProject.list.find((task) => {
+    if (task.id === taskId) {
+      task.toggleComplete();
+      status.textContent = formatStatus(task.isComplete);
+    }
+  });
+}
+
+export { renderTaskItem, switchStatus };

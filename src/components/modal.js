@@ -24,6 +24,16 @@ function handleModal(e) {
 
 const handleSubmit = (...values) => submitTask(...values);
 
+function handleForm() {
+  const formData = new FormData(form);
+  const values = Array.from(formData.values());
+
+  handleSubmit(...values);
+  updateTaskList();
+  clearForm();
+}
+
 modal.addEventListener("click", handleModal);
+form.addEventListener("submit", handleForm);
 
 export { modal, close };

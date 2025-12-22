@@ -1,6 +1,5 @@
-import { modal, close } from "./modal";
-
-const addTask = () => modal.showModal();
+import { addTask } from "./project";
+import { close } from "./modal";
 
 function handleBtns(e) {
   const btn = e.target.closest("button");

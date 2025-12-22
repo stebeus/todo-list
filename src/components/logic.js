@@ -29,7 +29,7 @@ function createProject(name) {
   const find = (taskId) => list.find((task) => task.id === taskId);
   const remove = (taskId) => list.splice(find(taskId), 1);
 
-  return { id, name, add, remove };
+  return { id, name, list, add, remove };
 }
 
 const projectManager = {

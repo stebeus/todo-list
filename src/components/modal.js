@@ -1,42 +1,55 @@
 import { submitTask, updateTaskList } from "./project";
+import { submitProject } from "./sidebar";
 
-const modal = document.querySelector(".modal");
 const taskModal = document.querySelector("#task-modal");
 const projectModal = document.querySelector("#project-modal");
 
-const form = document.querySelector("form");
+const taskForm = document.querySelector("#task-form");
+const projectForm = document.querySelector("#project-form");
 
-const clearForm = () => form.reset();
+const clearForm = () => {
+  taskForm.reset();
+  projectForm.reset();
+};
 
-function close() {
-  modal.close();
+function close(e) {
+  const dialog = e.target.closest("dialog");
+  dialog.close();
   clearForm();
 }
 
 function handleModal(e) {
-  const modalDimensions = modal.getBoundingClientRect();
+  const dialog = e.target.closest("dialog");
+  const modalDimensions = dialog.getBoundingClientRect();
   if (
     e.clientX < modalDimensions.left ||
     e.clientX > modalDimensions.right ||
     e.clientY < modalDimensions.top ||
     e.clientY > modalDimensions.bottom
   ) {
-    close();
+    close(e);
   }
 }
 
-const handleSubmit = (...values) => submitTask(...values);
-
-function handleForm() {
-  const formData = new FormData(form);
+function handleTaskForm() {
+  const formData = new FormData(taskForm);
   const values = Array.from(formData.values());
 
-  handleSubmit(...values);
+  submitTask(...values);
   updateTaskList();
   clearForm();
 }
 
-modal.addEventListener("click", handleModal);
-form.addEventListener("submit", handleForm);
+function handleProjectForm() {
+  const formData = new FormData(projectForm).values;
+  submitProject(formData);
+  clearForm();
+}
 
-export { projectModal, taskModal, close };
+taskModal.addEventListener("click", handleModal);
+projectModal.addEventListener("click", handleModal);
+
+taskForm.addEventListener("submit", handleTaskForm);
+projectForm.addEventListener("submit", handleProjectForm);
+
+export { taskModal, projectModal, close };

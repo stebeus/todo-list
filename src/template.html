@@ -44,10 +44,10 @@
         </footer>
       </aside>
       <dialog class="modal" id="task-modal">
-        <form method="dialog">
+        <form id="task-form" method="dialog">
           <div>
-            <label for="name">Task name:</label>
-            <input type="text" name="name" id="name" required />
+            <label for="task-name">Task name:</label>
+            <input type="text" name="task-name" id="task-name" required />
           </div>
           <div>
             <label for="desc">Description:</label>
@@ -70,10 +70,10 @@
         </form>
       </dialog>
       <dialog class="modal" id="project-modal">
-        <form method="dialog">
+        <form id="project-form" method="dialog">
           <div>
-            <label for="name">Project name:</label>
-            <input type="text" name="name" id="name" required />
+            <label for="project-name">Project name:</label>
+            <input type="text" name="project-name" id="project-name" required />
           </div>
           <button type="submit">Submit</button>
           <button type="button" data-action="close">Close</button>

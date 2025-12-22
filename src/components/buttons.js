@@ -1,4 +1,4 @@
-import { modal } from "./modal";
+import { modal, close } from "./modal";
 
 const createTask = () => modal.showModal();
 
@@ -10,6 +10,7 @@ function handleBtns(e) {
 
   const actionHandlers = {
     "create-task": createTask,
+    close,
   };
 
   const actionHandler = actionHandlers[action];

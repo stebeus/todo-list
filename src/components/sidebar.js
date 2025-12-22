@@ -7,4 +7,6 @@ function initHome() {
   submitProject(home);
 }
 
-export { submitProject };
+let currProject = initHome();
+
+export { submitProject, currProject };

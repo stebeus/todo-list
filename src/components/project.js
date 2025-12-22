@@ -1,10 +1,9 @@
-import { createTask, createProject, projectManager } from "./logic";
+import { createTask } from "./logic";
 import { modal } from "./modal";
+import { currProject } from "./sidebar";
 import { renderTaskItem } from "./task";
 
 const taskList = document.querySelector(".task-list");
-
-let currProject = createProject("Home");
 
 const addTask = () => modal.showModal();
 const submitTask = (...values) => currProject.add(createTask(...values));
@@ -22,11 +21,4 @@ function removeTask(e) {
   updateTaskList();
 }
 
-export {
-  taskList,
-  currProject,
-  addTask,
-  submitTask,
-  updateTaskList,
-  removeTask,
-};
+export { taskList, addTask, submitTask, updateTaskList, removeTask };

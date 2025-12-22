@@ -1,5 +1,6 @@
 import { capitalize, formatDate, formatStatus } from "../utils/formatters";
-import { taskList, currProject } from "./project";
+import { currProject } from "./sidebar";
+import { taskList } from "./project";
 
 function renderTaskItem(task) {
   const template = document.querySelector("#task-item-template");

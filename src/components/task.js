@@ -8,9 +8,9 @@ function renderTaskItem(task) {
   clone.querySelector(".task-item").dataset.id = task.id;
   clone.querySelector("h4").textContent = task.name;
   clone.querySelector("#desc").textContent = task.desc;
-  clone.querySelector("#due-date").textContent = task.dueDate;
-  clone.querySelector("#priority").textContent = task.priority;
-  clone.querySelector("#status").textContent = task.isComplete;
+  clone.querySelector("#due-date").textContent = formatDate(task.dueDate);
+  clone.querySelector("#priority").textContent = capitalize(task.priority);
+  clone.querySelector("#status").textContent = formatStatus(task.isComplete);
 
   taskList.appendChild(clone);
 }

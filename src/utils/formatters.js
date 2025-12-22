@@ -10,4 +10,6 @@ function formatDate(date) {
   return new Intl.DateTimeFormat("en-us", options).format(date);
 }
 
-export { capitalize, formatDate };
+const formatStatus = (bool) => (bool ? "Completed" : "Not completed");
+
+export { capitalize, formatDate, formatStatus };

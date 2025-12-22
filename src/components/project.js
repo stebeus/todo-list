@@ -1,3 +1,5 @@
 import { createTask, createProject, projectManager } from "./logic";
 
-export {};
+let currProject = createProject("Home");
+
+export { currProject };

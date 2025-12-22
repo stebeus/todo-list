@@ -6,4 +6,4 @@ let currProject = createProject("Home");
 
 const submitTask = (...values) => currProject.add(createTask(...values));
 
-export { currProject, submitTask };
+export { taskList, currProject, submitTask };

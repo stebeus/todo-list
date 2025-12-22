@@ -4,4 +4,6 @@ const taskList = document.querySelector(".task-list");
 
 let currProject = createProject("Home");
 
-export { currProject };
+const submitTask = (...values) => currProject.add(createTask(...values));
+
+export { currProject, submitTask };

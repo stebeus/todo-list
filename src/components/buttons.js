@@ -1,6 +1,6 @@
 import { modal, close } from "./modal";
 
-const createTask = () => modal.showModal();
+const addTask = () => modal.showModal();
 
 function handleBtns(e) {
   const btn = e.target.closest("button");
@@ -9,7 +9,7 @@ function handleBtns(e) {
   const { action } = btn.dataset;
 
   const actionHandlers = {
-    "create-task": createTask,
+    "add-task": addTask,
     close,
   };
 

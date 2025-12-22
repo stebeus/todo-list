@@ -6,11 +6,29 @@ function createTask(name, desc, priority, dueDate) {
   let isComplete = false;
   const toggleComplete = () => (isComplete = !isComplete);
 
+  function switchPriority() {
+    switch (priority) {
+      case "low":
+        priority = "medium";
+        break;
+
+      case "medium":
+        priority = "high";
+        break;
+
+      case "high":
+        priority = "low";
+        break;
+    }
+  }
+
   return {
     id,
     name,
     desc,
-    priority,
+    get priority() {
+      return priority;
+    },
     get dueDate() {
       return convertDateToObj(dueDate);
     },
@@ -18,6 +36,7 @@ function createTask(name, desc, priority, dueDate) {
       return isComplete;
     },
     toggleComplete,
+    switchPriority,
   };
 }
 

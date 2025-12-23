@@ -1,4 +1,5 @@
 import { createProject, projectManager } from "./logic";
+import { updateTaskList } from "./project";
 import { projectModal } from "./modal";
 
 const projectList = document.querySelector(".project-list");
@@ -16,12 +17,17 @@ function renderProjectItem(project) {
   clone.querySelector("h3").textContent = project.name;
 
   projectList.appendChild(clone);
-  console.log("IM WORKING RENEWR");
 }
 
 function updateProjectList() {
   clearProjectList();
   projectManager.list.forEach(renderProjectItem);
+}
+
+function switchProject(e) {
+  const projectId = e.target.closest(".project-item").dataset.id;
+  currProject = projectManager.switch(projectId);
+  updateTaskList();
 }
 
 function removeProject(e) {
@@ -42,6 +48,7 @@ export {
   addProject,
   submitProject,
   updateProjectList,
+  switchProject,
   removeProject,
   currProject,
 };

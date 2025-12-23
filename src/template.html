@@ -21,7 +21,14 @@
           <ul class="project-list">
             <li class="project-item">
               <h3>Home</h3>
-              <button type="button" data-action="remove-project">Remove</button>
+              <div class="actions">
+                <button type="button" data-action="switch-project">
+                  Switch
+                </button>
+                <button type="button" data-action="remove-project">
+                  Remove
+                </button>
+              </div>
             </li>
           </ul>
         </nav>
@@ -102,7 +109,10 @@
       <template id="project-item-template">
         <li class="project-item" data-id="">
           <h3></h3>
-          <button type="button" data-action="remove-project">Remove</button>
+          <div class="actions">
+            <button type="button" data-action="switch-project">Switch</button>
+            <button type="button" data-action="remove-project">Remove</button>
+          </div>
         </li>
       </template>
     </div>

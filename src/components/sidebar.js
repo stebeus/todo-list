@@ -32,7 +32,6 @@ function switchProject(e) {
 
 function removeProject(e) {
   const projectId = e.target.closest(".project-item").dataset.id;
-  console.log(projectId);
   projectManager.remove(projectId);
   updateProjectList();
 }

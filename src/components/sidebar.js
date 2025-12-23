@@ -24,6 +24,13 @@ function updateProjectList() {
   projectManager.list.forEach(renderProjectItem);
 }
 
+function removeProject(e) {
+  const projectId = e.target.closest(".project-item").dataset.id;
+  console.log(projectId);
+  projectManager.remove(projectId);
+  updateProjectList();
+}
+
 function initHome() {
   submitProject("Home");
   return projectManager.list[0];
@@ -31,4 +38,10 @@ function initHome() {
 
 let currProject = initHome();
 
-export { addProject, submitProject, updateProjectList, currProject };
+export {
+  addProject,
+  submitProject,
+  updateProjectList,
+  removeProject,
+  currProject,
+};

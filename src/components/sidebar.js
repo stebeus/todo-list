@@ -25,9 +25,8 @@ function updateProjectList() {
 }
 
 function initHome() {
-  const home = createProject("Home");
-  submitProject(home);
-  return home;
+  submitProject("Home");
+  return projectManager.list[0];
 }
 
 let currProject = initHome();

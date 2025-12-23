@@ -57,13 +57,13 @@ const projectManager = {
     return this.list.push(project);
   },
   find: function (projectId) {
-    return this.list.find((project) => project.id === projectId);
+    return this.list.findIndex((project) => project.id === projectId);
   },
   switch: function (projectId) {
-    return this.list[find(projectId)];
+    return this.list[this.find(projectId)];
   },
   remove: function (projectId) {
-    return this.list.splice(find(projectId), 1);
+    return this.list.splice(this.find(projectId), 1);
   },
 };
 

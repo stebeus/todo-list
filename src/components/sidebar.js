@@ -42,6 +42,7 @@ function initHome() {
 }
 
 let currProject = initHome();
+updateProjectList();
 
 export {
   addProject,

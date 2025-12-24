@@ -1,3 +1,4 @@
+import { storeTaskData } from "../storage";
 import { createTask } from "./logic";
 import { taskModal } from "./modal";
 import { currProject } from "./sidebar";

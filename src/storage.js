@@ -12,4 +12,6 @@ function storeTaskData() {
   });
 }
 
+const projectsData = localStorage.getItem("projects");
+
 export { storeProjectData, storeTaskData };

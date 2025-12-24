@@ -6,7 +6,11 @@ import { renderTaskItem } from "./task";
 const taskList = document.querySelector(".task-list");
 
 const addTask = () => taskModal.showModal();
-const submitTask = (...values) => currProject.add(createTask(...values));
+
+function submitTask(...values) {
+  currProject.add(createTask(...values));
+  storeTaskData();
+}
 
 const clearTaskList = () => (taskList.innerHTML = "");
 

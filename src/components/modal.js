@@ -24,7 +24,6 @@ function handleTaskForm() {
   const values = Array.from(formData.values());
 
   submitTask(...values);
-  storeTaskData();
   updateTaskList();
   clearForm();
 }
@@ -32,7 +31,6 @@ function handleTaskForm() {
 function handleProjectForm() {
   const name = document.querySelector("#project-name").value;
   submitProject(name);
-  storeProjectData();
   updateProjectList();
   clearForm();
 }

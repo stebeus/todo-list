@@ -6,7 +6,11 @@ import { storeProjectData } from "../storage";
 const projectList = document.querySelector(".project-list");
 
 const addProject = () => projectModal.showModal();
-const submitProject = (name) => projectManager.add(createProject(name));
+
+function submitProject(name) {
+  projectManager.add(createProject(name));
+  storeProjectData();
+}
 
 const clearProjectList = () => (projectList.innerHTML = "");
 

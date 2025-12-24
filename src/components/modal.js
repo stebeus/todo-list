@@ -1,4 +1,4 @@
-import { storeProjectData } from "../storage";
+import { storeProjectData, storeTaskData } from "../storage";
 import { submitTask, updateTaskList } from "./project";
 import { submitProject, updateProjectList } from "./sidebar";
 
@@ -24,6 +24,7 @@ function handleTaskForm() {
   const values = Array.from(formData.values());
 
   submitTask(...values);
+  storeTaskData();
   updateTaskList();
   clearForm();
 }

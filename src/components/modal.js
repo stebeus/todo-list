@@ -18,19 +18,6 @@ function close(e) {
   clearForm();
 }
 
-function handleModal(e) {
-  const dialog = e.target.closest("dialog");
-  const modalDimensions = dialog.getBoundingClientRect();
-  if (
-    e.clientX < modalDimensions.left ||
-    e.clientX > modalDimensions.right ||
-    e.clientY < modalDimensions.top ||
-    e.clientY > modalDimensions.bottom
-  ) {
-    close(e);
-  }
-}
-
 function handleTaskForm() {
   const formData = new FormData(taskForm);
   const values = Array.from(formData.values());
@@ -46,9 +33,6 @@ function handleProjectForm() {
   updateProjectList();
   clearForm();
 }
-
-taskModal.addEventListener("click", handleModal);
-projectModal.addEventListener("click", handleModal);
 
 taskForm.addEventListener("submit", handleTaskForm);
 projectForm.addEventListener("submit", handleProjectForm);

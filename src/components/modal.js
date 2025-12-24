@@ -1,3 +1,4 @@
+import { storeProjectData } from "../storage";
 import { submitTask, updateTaskList } from "./project";
 import { submitProject, updateProjectList } from "./sidebar";
 
@@ -30,6 +31,7 @@ function handleTaskForm() {
 function handleProjectForm() {
   const name = document.querySelector("#project-name").value;
   submitProject(name);
+  storeProjectData();
   updateProjectList();
   clearForm();
 }

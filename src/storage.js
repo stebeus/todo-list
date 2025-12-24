@@ -5,4 +5,11 @@ function storeProjectData() {
   localStorage.setItem("projects", data);
 }
 
-export { storeProjectData };
+function storeTaskData() {
+  projectManager.list.forEach((project) => {
+    const data = JSON.stringify(project.list);
+    localStorage.setItem("tasks", data);
+  });
+}
+
+export { storeProjectData, storeTaskData };

@@ -1,4 +1,3 @@
-import { storeProjectData, storeTaskData } from "../storage";
 import { submitTask, updateTaskList } from "./project";
 import { submitProject, updateProjectList } from "./sidebar";
 

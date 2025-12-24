@@ -13,5 +13,6 @@ function storeTaskData() {
 }
 
 const projectsData = localStorage.getItem("projects");
+const tasksData = localStorage.getItem("tasks");
 
-export { storeProjectData, storeTaskData };
+export { storeProjectData, storeTaskData, projectsData, tasksData };

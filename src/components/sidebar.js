@@ -1,7 +1,6 @@
 import { createProject, projectManager } from "./logic";
 import { updateTaskList } from "./project";
 import { projectModal } from "./modal";
-import { storeProjectData } from "../storage";
 
 const projectList = document.querySelector(".project-list");
 
@@ -9,7 +8,6 @@ const addProject = () => projectModal.showModal();
 
 function submitProject(name) {
   projectManager.add(createProject(name));
-  storeProjectData();
 }
 
 const clearProjectList = () => (projectList.innerHTML = "");
@@ -38,7 +36,6 @@ function switchProject(e) {
 function removeProject(e) {
   const projectId = e.target.closest(".project-item").dataset.id;
   projectManager.remove(projectId);
-  storeProjectData();
   updateProjectList();
 }
 

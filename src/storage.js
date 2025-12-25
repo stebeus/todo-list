@@ -3,8 +3,8 @@ const storeProjectData = (key, value) =>
 
 function retrieveData() {
   if (localStorage.length > 0) {
-    localStorage.getItem(JSON.parse("project-list"));
-    localStorage.getItem(JSON.parse("current-project"));
+    localStorage.getItem("project-list");
+    localStorage.getItem("current-project");
     console.log(localStorage);
   }
 }

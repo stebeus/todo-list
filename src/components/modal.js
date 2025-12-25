@@ -1,3 +1,5 @@
+import { storeProjectData } from "../storage";
+import { projectManager } from "./logic";
 import { submitTask, updateTaskList } from "./project";
 import { submitProject, updateProjectList } from "./sidebar";
 
@@ -30,6 +32,7 @@ function handleTaskForm() {
 function handleProjectForm() {
   const name = document.querySelector("#project-name").value;
   submitProject(name);
+  storeProjectData("project-list", projectManager.list);
   updateProjectList();
   clearForm();
 }

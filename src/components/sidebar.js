@@ -31,6 +31,7 @@ function updateProjectList() {
 function switchProject(e) {
   const projectId = e.target.closest(".project-item").dataset.id;
   currProject = projectManager.switch(projectId);
+  storeProjectData("current-project", currProject);
   updateTaskList();
 }
 

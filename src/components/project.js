@@ -1,4 +1,5 @@
-import { createTask } from "./logic";
+import { storeProjectData } from "../storage";
+import { createTask, projectManager } from "./logic";
 import { taskModal } from "./modal";
 import { currProject } from "./sidebar";
 import { renderTaskItem } from "./task";
@@ -21,6 +22,7 @@ function updateTaskList() {
 function removeTask(e) {
   const taskId = e.target.closest(".task-item").dataset.id;
   currProject.remove(taskId);
+  storeProjectData("project-list", projectManager.list);
   updateTaskList();
 }
 

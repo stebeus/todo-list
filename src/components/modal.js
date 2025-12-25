@@ -25,6 +25,7 @@ function handleTaskForm() {
   const values = Array.from(formData.values());
 
   submitTask(...values);
+  storeProjectData("project-list", projectManager.list);
   updateTaskList();
   clearForm();
 }

@@ -1,6 +1,8 @@
 import { capitalize, formatDate, formatStatus } from "../utils/formatters";
 import { currProject } from "./sidebar";
 import { taskList } from "./project";
+import { storeProjectData } from "../storage";
+import { projectManager } from "./logic";
 
 function renderTaskItem(task) {
   const template = document.querySelector("#task-item-template");
@@ -26,6 +28,7 @@ function switchPriority(e) {
       priority.textContent = capitalize(task.priority);
     }
   });
+  storeProjectData("project-list", projectManager.list);
 }
 
 function switchStatus(e) {
@@ -38,6 +41,7 @@ function switchStatus(e) {
       status.textContent = formatStatus(task.isComplete);
     }
   });
+  storeProjectData("project-list", projectManager.list);
 }
 
 export { renderTaskItem, switchStatus, switchPriority };

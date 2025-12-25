@@ -1,4 +1,10 @@
 const storeProjectData = (key, value) =>
   localStorage.setItem(key, JSON.stringify(value));
 
-export { storeProjectData };
+function storeTaskData(key, value) {
+  value.forEach((project) => {
+    localStorage.setItem(key, JSON.stringify(project.list));
+  });
+}
+
+export { storeProjectData, storeTaskData };

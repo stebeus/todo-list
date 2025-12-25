@@ -3,6 +3,9 @@ import { addProject, switchProject, removeProject } from "./components/sidebar";
 import { addTask, removeTask } from "./components/project";
 import { switchPriority, switchStatus } from "./components/task";
 import { close } from "./components/modal";
+import { retrieveData } from "./storage";
+
+retrieveData();
 
 function handleBtns(e) {
   const btn = e.target.closest("button");

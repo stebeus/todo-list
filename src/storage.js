@@ -5,11 +5,13 @@ const storeProjectData = (key, value) =>
   localStorage.setItem(key, JSON.stringify(value));
 
 function retrieveData() {
-  if (localStorage.length > 0) {
-    projectManager.list = JSON.parse(localStorage.getItem("project-list"));
-    currProject = JSON.parse(localStorage.getItem("current-project"));
-    updateProjectList();
-  }
+  const projects = localStorage.getItem("project-list");
+  const current = localStorage.getItem("current-project");
+
+  if (projects) projectManager.list = JSON.parse(projects);
+  // if (current) currProject = JSON.parse(current);
+
+  updateProjectList();
 }
 
 export { storeProjectData, retrieveData };

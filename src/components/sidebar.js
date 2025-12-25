@@ -32,7 +32,8 @@ function switchProject(e) {
   const projectId = e.target.closest(".project-item").dataset.id;
   currProject = projectManager.switch(projectId);
   updateTaskList();
-  storeProjectData("current-project", currProject);
+  console.log(currProject);
+  // storeProjectData("current-project", currProject);
 }
 
 function removeProject(e) {

@@ -6,20 +6,11 @@ function createTask(name, desc, priority, dueDate) {
   let isComplete = false;
   const toggleComplete = () => (isComplete = !isComplete);
 
+  let currPriority = 0;
   function switchPriority() {
-    switch (priority) {
-      case "low":
-        priority = "medium";
-        break;
-
-      case "medium":
-        priority = "high";
-        break;
-
-      case "high":
-        priority = "low";
-        break;
-    }
+    const priorities = ["Low", "Medium", "High"];
+    currPriority = (currPriority + 1) % priorities.length;
+    return (priority = priorities[currPriority]);
   }
 
   return {

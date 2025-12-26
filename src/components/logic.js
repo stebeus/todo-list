@@ -14,6 +14,7 @@ function createTask(name, desc, priority, dueDate) {
   }
 
   return {
+    currPriority,
     id,
     name,
     desc,

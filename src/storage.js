@@ -26,8 +26,8 @@ function restoreTaskObj(task) {
     },
     switchPriority() {
       const priorities = ["Low", "Medium", "High"];
-      currPriority = (currPriority + 1) % priorities.length;
-      return (task.priority = priorities[currPriority]);
+      task.currPriority = (task.currPriority + 1) % priorities.length;
+      return (task.priority = priorities[task.currPriority]);
     },
   };
   return Object.assign(task, methods);

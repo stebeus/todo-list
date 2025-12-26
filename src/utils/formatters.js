@@ -1,7 +1,7 @@
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 function formatDate(date) {
-  if (typeof date === "string") return;
+  if (typeof date === "string") return date;
   else {
     const options = {
       weekday: "long",

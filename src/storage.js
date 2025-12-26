@@ -19,6 +19,20 @@ function restoreProjectObj(project) {
   return Object.assign(project, methods);
 }
 
+function restoreTaskObj(task) {
+  const methods = {
+    toggleComplete() {
+      return (task.isComplete = !task.isComplete);
+    },
+    switchPriority() {
+      const priorities = ["Low", "Medium", "High"];
+      currPriority = (currPriority + 1) % priorities.length;
+      return (task.priority = priorities[currPriority]);
+    },
+  };
+  return Object.assign(task, methods);
+}
+
 function retrieveData() {
   const projects = localStorage.getItem("project-list");
   const current = localStorage.getItem("current-project");
@@ -26,6 +40,9 @@ function retrieveData() {
   if (projects) {
     projectManager.list = JSON.parse(projects);
     projectManager.list.forEach(restoreProjectObj);
+    projectManager.list.forEach((project) =>
+      project.list.forEach(restoreTaskObj)
+    );
   }
 
   // if (current) currProject = JSON.parse(current);

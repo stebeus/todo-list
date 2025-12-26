@@ -18,12 +18,7 @@
         <h2>Projects</h2>
         <button type="button" data-action="add-project">Create project</button>
         <nav>
-          <ul class="project-list">
-            <li class="project-item">
-              <h3><a href="/">Home</a></h3>
-              <button type="button" data-action="remove-project">Remove</button>
-            </li>
-          </ul>
+          <ul class="project-list"></ul>
         </nav>
         <footer>
           <p>
@@ -43,11 +38,11 @@
           >
         </footer>
       </aside>
-      <dialog class="modal">
-        <form method="dialog">
+      <dialog class="modal" id="task-modal">
+        <form id="task-form" method="dialog">
           <div>
-            <label for="name">Task name:</label>
-            <input type="text" name="name" id="name" required />
+            <label for="task-name">Task name:</label>
+            <input type="text" name="task-name" id="task-name" required />
           </div>
           <div>
             <label for="desc">Description:</label>
@@ -64,6 +59,16 @@
           <div>
             <label for="due-date">Due date:</label>
             <input type="date" name="due-date" id="due-date" required />
+          </div>
+          <button type="submit">Submit</button>
+          <button type="button" data-action="close">Close</button>
+        </form>
+      </dialog>
+      <dialog class="modal" id="project-modal">
+        <form id="project-form" method="dialog">
+          <div>
+            <label for="project-name">Project name:</label>
+            <input type="text" name="project-name" id="project-name" required />
           </div>
           <button type="submit">Submit</button>
           <button type="button" data-action="close">Close</button>
@@ -91,8 +96,11 @@
       </template>
       <template id="project-item-template">
         <li class="project-item" data-id="">
-          <h3><a href=""></a></h3>
-          <button type="button" data-action="remove-project">Remove</button>
+          <h3></h3>
+          <div class="actions">
+            <button type="button" data-action="switch-project">Switch</button>
+            <button type="button" data-action="remove-project">Remove</button>
+          </div>
         </li>
       </template>
     </div>
